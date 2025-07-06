@@ -5,13 +5,17 @@
 ## Overview
 
 This application automatically manages your display refresh rate to optimize battery life and performance:
-- **On Battery**: Sets refresh rate to 60Hz to conserve battery
-- **On AC Power**: Sets refresh rate to 144Hz for optimal performance
+- **On Battery**: Switches to lower refresh rates (60-75Hz) to conserve battery
+- **On AC Power**: Switches to higher refresh rates (120Hz+) for optimal performance
+
+The application intelligently works with your display's supported refresh rates and chooses the best settings automatically.
 
 The application runs as a Windows scheduled task and triggers automatically when power events occur.
 
 ## Features
 
+- ✅ Intelligent refresh rate detection and selection
+- ✅ Supports all display types and refresh rates
 - ✅ Automatic refresh rate switching based on power state
 - ✅ Runs silently in the background
 - ✅ No user interaction required after setup
@@ -86,9 +90,10 @@ AutoRefreshRates/
 - Verify Windows Task Scheduler service is running
 
 ### Refresh Rate Not Changing
-- Confirm your display supports the target refresh rates (60Hz and 144Hz)
+- Confirm your display supports multiple refresh rates
 - Check that the DisplayConfig module can be installed
 - Verify the scheduled task is enabled in Task Scheduler
+- Ensure your graphics drivers are up to date
 
 ### Manual Task Management
 If needed, you can manually manage the task:
@@ -106,6 +111,10 @@ For issues or questions:
 ## License
 
 This software is provided "as-is" without warranty. Use at your own risk.
+
+## Credits
+
+Developed by [Umar Sidiki](https://github.com/UmarSidiki)
 
 ---
 

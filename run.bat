@@ -5,15 +5,17 @@ REM ===============================================
 REM Auto Refresh Rate Manager - Installer
 REM 
 REM Automatically adjusts display refresh rate based on power state
-REM - On Battery: 60Hz (battery saving)
-REM - On AC Power: 144Hz (performance)
+REM - On Battery: Lowest available refresh rate (power saving)
+REM - On AC Power: Highest available refresh rate (performance)
 REM 
 REM Version: 1.0
 REM Compatibility: Windows 10/11
+REM Developer: https://github.com/UmarSidiki
 REM ===============================================
 
 echo ===============================================
 echo Auto Refresh Rate Manager - Installer
+echo Developed by: https://github.com/UmarSidiki
 echo ===============================================
 echo.
 
@@ -94,6 +96,12 @@ if /i "%IMPORT_TASK%"=="Y" (
         echo Failed to import task.
     ) else (
         echo Task imported successfully.
+        
+        REM Delete the XML file after successful import
+        if exist "%OUTPUT_XML%" (
+            del "%OUTPUT_XML%"
+            echo Generated XML file removed.
+        )
     )
 )
 
